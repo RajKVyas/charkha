@@ -1,0 +1,26 @@
+# Copy this file and replace the placeholder values with datasets you are authorized to use.
+# Review each source's current license, terms, privacy characteristics, and attribution needs.
+
+pretrain:
+  - id: your-organization/your-dataset
+    role: general-text
+    license: verify-upstream
+    config: default
+    split: train
+    budget_B: 1
+    weight: 1.0
+    content_type: prose
+    streaming: true
+    # text_field: text
+
+pipeline:
+  - normalize
+  - quality_filter
+  - dedup
+  - pii_scrub
+  - decontaminate
+  - tokenize_shard
+
+tokenizer: charkha_tokenizer.json
+shard_tokens: 100_000_000
+target_langs: [en]

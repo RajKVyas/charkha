@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "charkha"
+version = "0.1.0"
+description = "A depth-recurrent hybrid language model for consumer GPUs"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch>=2.0",
+    "numpy",
+    "pyyaml",
+    "tokenizers>=0.22",
+    "datasets>=5.0",
+    "huggingface_hub>=1.21",
+    "safetensors>=0.8",
+]
+
+[project.urls]
+Repository = "https://github.com/RajKVyas/charkha"
+Documentation = "https://github.com/RajKVyas/charkha#readme"
+Issues = "https://github.com/RajKVyas/charkha/issues"
+
+[project.optional-dependencies]
+cuda = ["flash-linear-attention", "triton"]
+8bit = ["bitsandbytes>=0.49"]
+eval = ["lm_eval"]
+dev = ["ruff", "pytest"]
+
+[project.scripts]
+charkha = "charkha.cli:main"
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+lint.select = ["E", "F", "W"]
+lint.ignore = [
+    "E402",  # several CLI modules intentionally adjust sys.path before local imports
+    "E501",  # formatter preserves a few long strings and URLs
+    "E731",  # compact callback lambdas are used in self-test harnesses
+    "E741",  # tensor equations conventionally use short mathematical names
+    "F403",  # package internals re-export controlled module surfaces
+    "F405",
+    "F841",  # some probes retain intermediate values for debugger inspection
+]

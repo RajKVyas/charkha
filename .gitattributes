@@ -1,0 +1,21 @@
+# Shell scripts must stay LF — WSL/Linux bash chokes on CRLF
+*.sh text eol=lf
+
+# Python source — auto-detect, don't force conversion
+*.py text
+
+# Binary files
+*.json binary
+*.pt binary
+*.bin binary
+*.png binary
+*.jpg binary
+
+# Documentation
+*.md text
+*.tex text
+*.bib text
+*.yaml text
+*.yml text
+*.toml text
+*.cfg text

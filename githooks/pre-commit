@@ -1,0 +1,6 @@
+#!/bin/sh
+# Fast gate: refuse commits with syntax errors.
+set -e
+ROOT=$(git rev-parse --show-toplevel)
+PY="$ROOT/.venv/bin/python"; [ -x "$PY" ] || PY=python3
+"$PY" "$ROOT/scripts/proof_bundle.py" --syntax-only

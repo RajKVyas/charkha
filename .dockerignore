@@ -1,0 +1,12 @@
+data/
+runs/
+.git/
+__pycache__/
+*.pyc
+.venv/
+*.pt
+*.bin
+*.log
+artifacts/
+.vscode/
+.idea/

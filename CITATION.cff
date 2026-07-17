@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use CHARKHA in your research, please cite it as follows."
+title: CHARKHA
+abstract: >
+  A 0.97B-parameter depth-recurrent hybrid language model (GDN-2 + attention)
+  designed to train, fine-tune, and serve on a single 8 GB consumer GPU.
+  Includes a custom 131k-vocab tokenizer, adaptive test-time compute,
+  and an experimental serving scaffold with retrieval, tools, and confidence-gated
+  effort escalation.
+authors:
+  - name: CHARKHA contributors
+repository-code: https://github.com/RajKVyas/charkha
+license: MIT
+type: software

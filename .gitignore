@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Training artifacts (large, regenerable)
+runs/
+data/
+data_*/
+_smoke_*/
+*.pt
+*.bin
+*.tmp
+*.twin
+
+# Test scratch
+src/_selftest_*/
+tests/__pycache__/
+
+# Machine-specific
+.claude/
+.env
+.env.*
+*.local.*
+
+# Local generated artifacts
+artifacts/
+*.log
+scratch*.py
+nohup.out
+
+# IDE / editor
+.vscode/*
+!.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific generated
+configs/_src_manifests/
+board/
+board/board.html
+paper/main.pdf
+paper/*.aux
+paper/*.log
+paper/*.bbl
+paper/*.blg
+
+# Agent / AI config files
+AGENTS.md
+CLAUDE.md
+AGENT.md
+.agents/
+
+# Node.js (unused)
+package.json
+package-lock.json
+node_modules/
+
+# Rust build
+**/target/
+
+# SQLite databases
+*.sqlite
+*.db
+
+# Checkpoints and large models
+*.safetensors
+*.gguf
+# Broken symlinks (WSL artifacts)
+charkha_tokenizer_v8.json
+# pip install artifacts
+*.egg-info/

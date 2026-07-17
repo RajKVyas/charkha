@@ -1,0 +1,7 @@
+#!/bin/sh
+# Full CPU proof before anything leaves the machine. Skip explicitly with --no-verify
+# only for emergency pushes, and note why on the board card.
+set -e
+ROOT=$(git rev-parse --show-toplevel)
+PY="$ROOT/.venv/bin/python"; [ -x "$PY" ] || PY=python3
+"$PY" "$ROOT/scripts/proof_bundle.py"

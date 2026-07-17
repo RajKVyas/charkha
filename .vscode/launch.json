@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "CHARKHA: Toy Training",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "charkha._toy",
+      "args": ["--toy"],
+      "env": {"PYTHONPATH": "${workspaceFolder}/src"},
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "CHARKHA: Fast Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/tests/run_tests.py",
+      "env": {"PYTHONPATH": "${workspaceFolder}/src"},
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "CHARKHA: Serve",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "serve",
+      "args": ["--toy", "--once", "hello"],
+      "env": {"PYTHONPATH": "${workspaceFolder}/src"},
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
