@@ -84,5 +84,7 @@ illustrative user configuration, not a record of the corpus used for any
 released artifact.
 
 `charkha_tokenizer.json` is a generated BPE vocabulary and merge table created
-with Hugging Face Tokenizers. It contains no raw training documents. Its exact
-training-corpus manifest is not included in this release.
+with Hugging Face Tokenizers from the CC BY-SA 3.0 `Salesforce/wikitext`
+`wikitext-103-raw-v1` corpus. See
+[`docs/TOKENIZER_PROVENANCE.md`](docs/TOKENIZER_PROVENANCE.md) for the exact
+command and SHA-256 hashes. It contains no raw training documents.

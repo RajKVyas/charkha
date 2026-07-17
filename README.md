@@ -15,7 +15,8 @@ A full training stack for a small, fast language model:
   core. Loops the same transformer blocks multiple times per token, trading
   compute for depth at inference via an effort dial (1–16 loops). Default
   config at d_model=2048 produces ~994M parameters.
-- **Tokenizer** (`charkha_tokenizer.json`): Included 65,535-token ByteLevel BPE tokenizer.
+- **Tokenizer** (`charkha_tokenizer.json`): Included 65,535-token ByteLevel BPE tokenizer
+  ([provenance](docs/TOKENIZER_PROVENANCE.md)).
 - **Training** (`src/train.py`): Muon/NormM optimizers with 8-bit state and
   CPU offload, chunked fused cross-entropy, gradient checkpointing, truncated
   BPTT through recurrence. Crash-survivable checkpoints.
