@@ -1,7 +1,7 @@
 # Reproducible Linux/WSL CUDA environment used for full training.
 # Install a CUDA-compatible PyTorch build before packages that compile against it.
 
-torch==2.6.0
+torch==2.12.1
 triton==3.2.0
 flash-linear-attention==0.5.1
 fla-core==0.5.1
