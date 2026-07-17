@@ -629,7 +629,10 @@ class GatedDeltaNet(nn.Module):
 # Decouples the scalar erase/write gate into channel-wise b_t (erase, key axis)
 # and w_t (write, value axis), plus channel-wise decay. Recovers GDN/KDA when
 # gates collapse to scalars. ~0.5% more params than GDN (b_proj + w_proj),
-# ~2% more compute. NC-licensed kernels from NVlabs/GatedDeltaNet-2; our
+# ~2% more compute. The architecture follows the GatedDeltaNet-2 paper and
+# NVIDIA reference repository. No NVIDIA source or kernels are included here:
+# this PyTorch recurrence is written from the published equations, while the
+# optional production kernels are imported from flash-linear-attention (MIT).
 # sequential CPU fallback matches the math exactly at lower throughput.
 # --------------------------------------------------------------------------
 

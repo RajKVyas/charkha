@@ -4,7 +4,7 @@ title: CHARKHA
 abstract: >
   A 0.97B-parameter depth-recurrent hybrid language model (GDN-2 + attention)
   designed to train, fine-tune, and serve on a single 8 GB consumer GPU.
-  Includes a custom 131k-vocab tokenizer, adaptive test-time compute,
+  Includes a custom 65,535-token BPE tokenizer, adaptive test-time compute,
   and an experimental serving scaffold with retrieval, tools, and confidence-gated
   effort escalation.
 authors:

@@ -6,6 +6,9 @@ import torch
 
 
 def _zeropower_ns5(G, steps=5):
+    # Adapted from Keller Jordan's Muon reference implementation:
+    # https://github.com/KellerJordan/Muon (MIT, copyright 2024 Keller Jordan).
+    # The upstream license notice is reproduced in NOTICE.md.
     a, b, c = 3.4445, -4.7750, 2.0315
     orig_shape = G.shape
     # Newton-Schulz needs a 2D matrix; flatten if >2D

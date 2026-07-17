@@ -1178,12 +1178,11 @@ if __name__ == "__main__":
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "charkha_tokenizer.json"
         ),
         help="a tokenizer hub name or a local tokenizer.json path "
-        "(default: Sutra-131k, charkha_tokenizer.json — vocab 131072, hex-merge + single-digit "
-        "isolation, SuperBPE-curriculum Stage-1; beats 12/13 of the broad tokenizer "
-        "field on held-out compression + 100%% digit isolation; see scripts/"
-        "train_tokenizer.py + charkha_v8.py). Absolute path by default so serve.py/"
-        "train.py resolve it regardless of cwd. --digit-split is auto-skipped (native). "
-        "serve.py and train.py must agree on vocab_size (131072 -> uint32 shards).",
+        "(default: the bundled 65,535-token ByteLevel BPE tokenizer, trained with "
+        "scripts/train_tokenizer.py). The absolute default path lets serve.py and "
+        "train.py resolve it regardless of cwd. --digit-split is auto-skipped when "
+        "the selected tokenizer already isolates digits. Training and serving must "
+        "use the same tokenizer and vocab_size.",
     )
     a = p.parse_args()
     if a.selftest:

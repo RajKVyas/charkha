@@ -90,7 +90,7 @@
 
 | File | Description |
 |---|---|
-| `train_tokenizer.py` | BPE tokenizer training (Sutra-131k) |
+| `train_tokenizer.py` | ByteLevel BPE tokenizer training |
 | `proof_bundle.py` | CPU proof bundle — syntax check + all selftests |
 | `grow_init.py` | Width-growth init from a trained mini model |
 | `cloud_probe.py` | Cloud GPU probe — launch config validation |

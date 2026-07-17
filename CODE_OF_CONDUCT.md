@@ -28,5 +28,9 @@ investigated and will result in a response deemed necessary and appropriate.
 
 ## Attribution
 
-This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org),
-version 2.1.
+This is a condensed adaptation of the [Contributor Covenant, version
+2.1](https://www.contributor-covenant.org/version/2/1/code_of_conduct/),
+copyright Organization for Ethical Source. Contributor Covenant 2.1 is
+licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+CHARKHA shortened its pledge, standards, and enforcement language for this
+repository; the original authors do not endorse this project.
