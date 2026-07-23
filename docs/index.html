@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHARKHA — Depth-Recurrent Language Model</title>
+<meta name="description" content="A ~1B-parameter depth-recurrent language model training stack for a single 8GB consumer GPU. Research code — MIT licensed.">
+<meta property="og:title" content="CHARKHA — Depth-Recurrent Language Model">
+<meta property="og:description" content="Train a ~1B depth-recurrent LM on a single consumer GPU. GDN-2 + attention hybrid with effort dial.">
+<meta property="og:url" content="https://rajkvyas.github.io/charkha">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+body { font-family: system-ui, -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 2rem; line-height: 1.6; color: #e0e0e0; background: #0d1117; }
+a { color: #58a6ff; }
+h1 { border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; }
+code { background: #161b22; padding: 0.2em 0.4em; border-radius: 4px; }
+pre { background: #161b22; padding: 1rem; border-radius: 6px; overflow-x: auto; }
+.cta { display: inline-block; background: #238636; color: white; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 0.5rem 0; }
+.cta:hover { background: #2ea043; }
+</style>
+</head>
+<body>
+<h1>CHARKHA</h1>
+<p>A <strong>~1B-parameter depth-recurrent language model</strong> that trains and serves on a single consumer GPU (8 GB VRAM).</p>
+<p><a class="cta" href="https://github.com/RajKVyas/charkha">View on GitHub</a>
+<a class="cta" style="background:#1f6feb" href="docs/TUTORIAL">Tutorial</a>
+<a class="cta" style="background:#8957e5" href="docs/ARCHITECTURE">Architecture</a></p>
+
+<h2>Key Features</h2>
+<ul>
+<li><strong>Depth-recurrent core</strong> — loops the same transformer blocks multiple times per token. Effort dial (1–16 passes) trades compute for depth at inference.</li>
+<li><strong>GDN-2 + attention hybrid</strong> — Gated Delta Network v2 (linear-time) alternates with sliding-window attention.</li>
+<li><strong>Consumer GPU training</strong> — gradient checkpointing, chunked fused CE, 8-bit optimizer offload. Full 1B config fits 8 GB.</li>
+<li><strong>Full stack</strong> — data prep → training → serving → SFT, distillation, RL, model merging.</li>
+<li><strong>MIT license</strong> — free for research and commercial use.</li>
+</ul>
+
+<h2>Quick Start</h2>
+<pre><code>git clone https://github.com/RajKVyas/charkha.git
+cd charkha
+python -m charkha._toy --toy   # CPU selftest, no GPU required</code></pre>
+
+<h2>Documentation</h2>
+<ul>
+<li><a href="docs/TUTORIAL">Tutorial</a> — walkthrough from zero to trained model</li>
+<li><a href="docs/ARCHITECTURE">Architecture</a> — package layout and API reference</li>
+<li><a href="https://github.com/RajKVyas/charkha/blob/main/README.md">README</a> — full project overview</li>
+<li><a href="https://github.com/RajKVyas/charkha/blob/main/docs/TOKENIZER_PROVENANCE.md">Tokenizer Provenance</a></li>
+</ul>
+
+<h2>Citation</h2>
+<pre><code>@software{vyas2026charkha,
+  author = {Vyas, Raj},
+  title = {{CHARKHA}: A Depth-Recurrent Language Model for Consumer GPUs},
+  url = {https://github.com/RajKVyas/charkha},
+  year = {2026}
+}</code></pre>
+<p><a href="https://github.com/RajKVyas/charkha">github.com/RajKVyas/charkha</a></p>
+</body>
+</html>
