@@ -1,3 +1,5 @@
+> **Moved:** this repository now lives at https://lab.daydreamstudio.cc/raj.vyas/charkha. This GitHub copy is archived and no longer updated.
+
 # CHARKHA
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
